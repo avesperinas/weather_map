@@ -4,6 +4,7 @@
 import os
 import sys
 import logging
+from functools import wraps
 from typing import Callable
 
 
@@ -28,6 +29,7 @@ logger = setup_logger()
 
 
 def manage_exception(function: Callable) -> Callable:
+    @wraps(function)
     def wrapper(*args, **kwargs):
         
         if os.environ.get("MANAGE_EXCEPTIONS", "false") == "true":
