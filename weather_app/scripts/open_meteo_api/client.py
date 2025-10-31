@@ -41,3 +41,6 @@ class OpenMeteoAPIClient:
                 "timezone": "auto"
             }
         )
+
+
+open_meteo_client = OpenMeteoAPIClient()
